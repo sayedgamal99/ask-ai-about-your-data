@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask AI About Your Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-robot"></i>
+                <h1>Ask AI About Your Data</h1>
+                <p>Upload your CSV file and ask questions in natural language to get AI-powered insights!</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-header">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h2>Upload Your CSV File</h2>
+                    </div>
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="csvFile" accept=".csv" hidden>
+                        <div class="upload-placeholder">
+                            <i class="fas fa-file-csv"></i>
+                            <p>Click to browse or drag & drop your CSV file here</p>
+                            <span class="file-info">Supported format: .csv</span>
+                        </div>
+                    </div>
+                    <div id="fileInfo" class="file-info-display" style="display: none;">
+                        <div class="file-preview">
+                            <i class="fas fa-check-circle"></i>
+                            <span id="fileName"></span>
+                            <button id="removeFile" class="remove-btn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Section -->
+            <div class="question-section">
+                <div class="question-card">
+                    <div class="question-header">
+                        <i class="fas fa-question-circle"></i>
+                        <h2>Ask Your Question</h2>
+                    </div>
+                    <div class="question-content">
+                        <textarea 
+                            id="questionInput" 
+                            placeholder="What would you like to know about your data? e.g., 'What is the average sales amount?'"
+                            rows="4"
+                        ></textarea>
+                        <div class="question-examples">
+                            <h4>Example Questions:</h4>
+                            <div class="examples-grid">
+                                <span class="example-tag" data-question="What is the average age?">What is the average age?</span>
+                                <span class="example-tag" data-question="Show me the top 5 customers by sales">Top 5 customers by sales</span>
+                                <span class="example-tag" data-question="How many rows are in this dataset?">How many rows?</span>
+                                <span class="example-tag" data-question="What are the unique values in the category column?">Unique values in category</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-section">
+                <button id="submitBtn" class="submit-btn" disabled>
+                    <i class="fas fa-magic"></i>
+                    Ask AI
+                </button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <div class="results-card">
+                    <div class="results-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h2>AI Analysis Results</h2>
+                    </div>
+                    <div class="results-content">
+                        <div class="answer-section">
+                            <h3><i class="fas fa-lightbulb"></i> Answer</h3>
+                            <div id="answerText" class="answer-text"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Overlay -->
+            <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+                <div class="loading-content">
+                    <div class="loader"></div>
+                    <p>AI is analyzing your data...</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Ask AI About Your Data - Demo</p>
+        </footer>
+
+        <!-- Status Indicator -->
+        <div class="status-indicator">
+            <div id="statusDot" class="status-dot"></div>
+            <span id="statusText">Checking backend...</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
