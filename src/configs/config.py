@@ -17,8 +17,8 @@ logging.basicConfig(
 
 class Settings:
     # Ollama Configuration
-    OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-    OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3n:e4b")
+    OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://host.docker.internal:11434")
+    OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3:4b")
 
     # API Configuration
     API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:5599")
