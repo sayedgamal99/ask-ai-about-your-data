@@ -2,8 +2,7 @@ version: "3.8"
 
 services:
   fastapi-app:
-    # build: .
-    image: archivaidb.azurecr.io/cat-project:fastapi-app
+    build: .
     ports:
       - "8000:9999"
       - "5599:5599"
