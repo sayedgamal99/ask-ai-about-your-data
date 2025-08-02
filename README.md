@@ -14,6 +14,8 @@ A FastAPI application that allows users to upload CSV files and ask questions in
 ## Quick Start
 
 ### Using Docker
+
+#### If you have Ollama and gemma3:4b model:
 1. Clone the repository
 2. Copy `.env.example` to `.env` and configure if needed
 3. Run with Docker:
@@ -21,6 +23,15 @@ A FastAPI application that allows users to upload CSV files and ask questions in
 ```bash
 docker build -t ask-ai-about-data .
 docker run -p 9999:9999 -p 5599:5599 ask-ai-about-data
+```
+
+#### If you don't have Ollama:
+1. Clone the repository
+2. Copy `.env.example` to `.env` and configure if needed
+3. Run with Docker Compose:
+
+```bash
+docker compose up
 ```
 
 ### Local Development
