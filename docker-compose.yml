@@ -17,7 +17,7 @@ services:
       - ollama-net
 
   ollama:
-    image: archivaidb.azurecr.io/cat-project:ollama-gemma3-v2
+    image: saadaltohamy/cat-project:ollama-gemma3
     ports:
       - "11434:11434"
     networks:
